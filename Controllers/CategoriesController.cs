@@ -22,7 +22,7 @@ namespace E_commerc3D.Controllers
         // GET: Categories
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Seller.ToListAsync());
+            return View(await _context.Category.ToListAsync());
         }
 
         // GET: Categories/Details/5
@@ -33,7 +33,7 @@ namespace E_commerc3D.Controllers
                 return NotFound();
             }
 
-            var category = await _context.Seller
+            var category = await _context.Category
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (category == null)
             {
@@ -73,7 +73,7 @@ namespace E_commerc3D.Controllers
                 return NotFound();
             }
 
-            var category = await _context.Seller.FindAsync(id);
+            var category = await _context.Category.FindAsync(id);
             if (category == null)
             {
                 return NotFound();
@@ -124,7 +124,7 @@ namespace E_commerc3D.Controllers
                 return NotFound();
             }
 
-            var category = await _context.Seller
+            var category = await _context.Category
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (category == null)
             {
@@ -139,15 +139,15 @@ namespace E_commerc3D.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            var category = await _context.Seller.FindAsync(id);
-            _context.Seller.Remove(category);
+            var category = await _context.Category.FindAsync(id);
+            _context.Category.Remove(category);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool CategoryExists(string id)
         {
-            return _context.Seller.Any(e => e.Id == id);
+            return _context.Category.Any(e => e.Id == id);
         }
     }
 }

@@ -193,3 +193,8 @@ C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\obj\Debug\netcoreapp3.1\Razo
 C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\obj\Debug\netcoreapp3.1\Razor\Views\Products\Details.cshtml.g.cs
 C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\obj\Debug\netcoreapp3.1\Razor\Views\Products\Edit.cshtml.g.cs
 C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\obj\Debug\netcoreapp3.1\Razor\Views\Products\Index.cshtml.g.cs
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\obj\Debug\netcoreapp3.1\Razor\Views\Orders\Create.cshtml.g.cs
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\obj\Debug\netcoreapp3.1\Razor\Views\Orders\Delete.cshtml.g.cs
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\obj\Debug\netcoreapp3.1\Razor\Views\Orders\Details.cshtml.g.cs
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\obj\Debug\netcoreapp3.1\Razor\Views\Orders\Edit.cshtml.g.cs
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\obj\Debug\netcoreapp3.1\Razor\Views\Orders\Index.cshtml.g.cs
