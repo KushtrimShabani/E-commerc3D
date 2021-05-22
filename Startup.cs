@@ -1,4 +1,5 @@
 using E_commerc3D.Data;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -30,11 +31,39 @@ namespace E_commerc3D
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
             services.AddControllersWithViews();
             services.AddRazorPages();
             services.AddMvc();
+            services.AddAuthentication()
+          .AddGoogle(options =>
+          {
+              IConfigurationSection googleAuthNSection =
+                  Configuration.GetSection("Authentication:Google");
+              options.ClientId = "24640833825-jairush5krtemvhegmu80gn0grfaon2m.apps.googleusercontent.com";
+                options.ClientSecret = "DU9wqTNTDrMMnSkScfhPpmjv";
+                options.SaveTokens = true;
+
+              options.Events.OnCreatingTicket = ctx =>
+                {
+                    List<AuthenticationToken> tokens = ctx.Properties.GetTokens().ToList();
+
+                    tokens.Add(new AuthenticationToken()
+                    {
+
+                        Name = "TicketCreated",
+                        Value = DateTime.UtcNow.ToString()
+                    });
+
+                    ctx.Properties.StoreTokens(tokens);
+
+                    return Task.CompletedTask;
+                };
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

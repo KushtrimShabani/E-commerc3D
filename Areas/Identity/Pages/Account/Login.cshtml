@@ -63,12 +63,19 @@
                 {
                     <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
                         <div>
-                            <p>
-                                @foreach (var provider in Model.ExternalLogins)
-                                {
-                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
-                                }
-                            </p>
+
+                            @foreach (var provider in Model.ExternalLogins)
+                            {
+                                <div class="col s12 m6 offset-m3 center-align">
+
+                                    <button type="submit"; class="btn btn-primary btn btn-primary bg-light text-dark" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">
+                                        <img  style="padding: 0px; width:23px;margin: 0px;" alt="Google sign-in"
+                                             src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+                                        @provider.DisplayName
+                                    </button>
+                                </div>
+                            }
+
                         </div>
                     </form>
                 }
@@ -76,7 +83,11 @@
         </section>
     </div>
 </div>
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
 
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "8/kDQMd5rZl0dQI6cjrGdDQaLxJqyvuzwcx7VsVCdS3yN8UYrmsr5XWnYtlQfCENIIT0r58t5H2LdTHjtAWkfA==",
+  "dgSpecHash": "CGeoTx5J9WxawOy2gXGx5FLsTATDV3hstrml8xgc2wkY/gmuvWOruTfCwshXc0BtqJQrCOgOZ5xbJzhnCBBfGw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Admin\\source\\repos\\E-commerc3D\\E-commerc3D\\E-commerc3D.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\3.1.11\\microsoft.aspnetcore.authentication.google.3.1.11.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.15\\microsoft.aspnetcore.cryptography.internal.3.1.15.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.15\\microsoft.aspnetcore.cryptography.keyderivation.3.1.15.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\3.1.10\\microsoft.aspnetcore.diagnostics.entityframeworkcore.3.1.10.nupkg.sha512",
@@ -181,7 +182,8 @@
     "C:\\Users\\Admin\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    "C:\\Users\\Admin\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\westwind.aspnetcore.livereload\\0.3.2\\westwind.aspnetcore.livereload.0.3.2.nupkg.sha512"
   ],
   "logs": []
 }

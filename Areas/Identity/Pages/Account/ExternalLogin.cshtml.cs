@@ -6,6 +6,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
@@ -65,6 +66,8 @@ namespace E_commerc3D.Areas.Identity.Pages.Account
             var properties = _signInManager.ConfigureExternalAuthenticationProperties(provider, redirectUrl);
             return new ChallengeResult(provider, properties);
         }
+
+
 
         public async Task<IActionResult> OnGetCallbackAsync(string returnUrl = null, string remoteError = null)
         {
@@ -129,6 +132,28 @@ namespace E_commerc3D.Areas.Identity.Pages.Account
                     result = await _userManager.AddLoginAsync(user, info);
                     if (result.Succeeded)
                     {
+                        if (info.Principal.HasClaim(c => c.Type == ClaimTypes.GivenName))
+                        {
+                            await _userManager.AddClaimAsync(user,
+                                info.Principal.FindFirst(ClaimTypes.GivenName));
+                        }
+
+                      /*  if (info.Principal.HasClaim(c => c.Type == "urn:google:locale"))
+                        {
+                            await _userManager.AddClaimAsync(user,
+                                info.Principal.FindFirst("urn:google:locale"));
+                        }
+
+                        if (info.Principal.HasClaim(c => c.Type == "urn:google:picture"))
+                        {
+                            await _userManager.AddClaimAsync(user,
+                                info.Principal.FindFirst("urn:google:picture"));
+                        }*/
+
+                        var props = new AuthenticationProperties();
+                        props.StoreTokens(info.AuthenticationTokens);
+                        props.IsPersistent = true;
+
                         _logger.LogInformation("User created an account using {Name} provider.", info.LoginProvider);
 
                         var userId = await _userManager.GetUserIdAsync(user);

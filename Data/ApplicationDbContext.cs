@@ -1,5 +1,6 @@
 ﻿using E_commerc3D.Models;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
@@ -14,7 +15,7 @@ namespace E_commerc3D.Data
     public class ApplicationDbContext : IdentityDbContext
     {
         private readonly IHttpContextAccessor httpContextAccessor;
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options, IHttpContextAccessor httpContextAccessor)
             : base(options)
         {
             this.httpContextAccessor = httpContextAccessor;

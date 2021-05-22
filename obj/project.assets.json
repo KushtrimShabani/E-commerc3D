@@ -2,6 +2,18 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "Microsoft.AspNetCore.Authentication.Google/3.1.11": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Google.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Google.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Microsoft.AspNetCore.Cryptography.Internal/3.1.15": {
         "type": "package",
         "compile": {
@@ -2879,10 +2891,37 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "Westwind.AspNetCore.LiveReload/0.3.2": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/Westwind.AspNetCore.LiveReload.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Westwind.AspNetCore.LiveReload.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
   "libraries": {
+    "Microsoft.AspNetCore.Authentication.Google/3.1.11": {
+      "sha512": "X+vqdP+K054lxkYUdHrltfn6uM1zVjShGZBJYgXhcnjmWWckEQ2aI0gRm+QR2etW9KUXYlUNau9gwcW93YTnfw==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authentication.google/3.1.11",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Google.dll",
+        "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Google.xml",
+        "microsoft.aspnetcore.authentication.google.3.1.11.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.google.nuspec"
+      ]
+    },
     "Microsoft.AspNetCore.Cryptography.Internal/3.1.15": {
       "sha512": "NsaZoYsLfPZwjy8RJ3dnWp/fFXWKyGh+RWIRPENNdXGLifFOsdTrRlGyXz2TqGk9LsgZTZvBwgLzY/F8XO+inA==",
       "type": "package",
@@ -9175,17 +9214,35 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "Westwind.AspNetCore.LiveReload/0.3.2": {
+      "sha512": "t+y7/WKEED7UiDZu5irRSCnGaZ2c6nEFr0U+5+oUFOsVra6gRRGCKiQoQ9/NCsRo1LAexukheFiOAAe2VCHdIQ==",
+      "type": "package",
+      "path": "westwind.aspnetcore.livereload/0.3.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/net5.0/Westwind.AspNetCore.LiveReload.dll",
+        "lib/net5.0/Westwind.AspNetCore.LiveReload.xml",
+        "lib/netcoreapp3.1/Westwind.AspNetCore.LiveReload.dll",
+        "lib/netcoreapp3.1/Westwind.AspNetCore.LiveReload.xml",
+        "westwind.aspnetcore.livereload.0.3.2.nupkg.sha512",
+        "westwind.aspnetcore.livereload.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "Microsoft.AspNetCore.Authentication.Google >= 3.1.11",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 3.1.10",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 3.1.15",
       "Microsoft.AspNetCore.Identity.UI >= 3.1.15",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.15",
       "Microsoft.EntityFrameworkCore.Sqlite >= 3.1.15",
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.15",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.5"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.5",
+      "Westwind.AspNetCore.LiveReload >= 0.3.2"
     ]
   },
   "packageFolders": {
@@ -9227,6 +9284,10 @@
       "netcoreapp3.1": {
         "targetAlias": "netcoreapp3.1",
         "dependencies": {
+          "Microsoft.AspNetCore.Authentication.Google": {
+            "target": "Package",
+            "version": "[3.1.11, )"
+          },
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
             "target": "Package",
             "version": "[3.1.10, )"
@@ -9256,6 +9317,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[3.1.5, )"
+          },
+          "Westwind.AspNetCore.LiveReload": {
+            "target": "Package",
+            "version": "[0.3.2, )"
           }
         },
         "imports": [
