@@ -7,18 +7,91 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Data\Migrations\20210527152705_Extend_IdentityUser.cs" />
+    <Compile Remove="Data\Migrations\20210527152705_Extend_IdentityUser.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210527152908_Extend_IdentityUser.cs" />
+    <Compile Remove="Data\Migrations\20210527152908_Extend_IdentityUser.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210527153020_Product.cs" />
+    <Compile Remove="Data\Migrations\20210527153020_Product.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210527153036_Product.cs" />
+    <Compile Remove="Data\Migrations\20210527153036_Product.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210527154516_Product.cs" />
+    <Compile Remove="Data\Migrations\20210527154516_Product.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210527171807_BaseEntity.cs" />
+    <Compile Remove="Data\Migrations\20210527171807_BaseEntity.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210527171845_Category.cs" />
+    <Compile Remove="Data\Migrations\20210527171845_Category.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210527171911_Product.cs" />
+    <Compile Remove="Data\Migrations\20210527171911_Product.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210527172011_Order.cs" />
+    <Compile Remove="Data\Migrations\20210527172011_Order.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210527172037_Category.cs" />
+    <Compile Remove="Data\Migrations\20210527172037_Category.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210527172055_Order.cs" />
+    <Compile Remove="Data\Migrations\20210527172055_Order.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210527172104_Product.cs" />
+    <Compile Remove="Data\Migrations\20210527172104_Product.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210527174116_BaseEntity.cs" />
+    <Compile Remove="Data\Migrations\20210527174116_BaseEntity.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210527174207_Category.cs" />
+    <Compile Remove="Data\Migrations\20210527174207_Category.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210527174309_Category.cs" />
+    <Compile Remove="Data\Migrations\20210527174309_Category.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210527174323_Product.cs" />
+    <Compile Remove="Data\Migrations\20210527174323_Product.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210527174337_Order.cs" />
+    <Compile Remove="Data\Migrations\20210527174337_Order.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210527174355_BaseEntity.cs" />
+    <Compile Remove="Data\Migrations\20210527174355_BaseEntity.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210527174411_BaseEntity.cs" />
+    <Compile Remove="Data\Migrations\20210527174411_BaseEntity.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210527182956_Extend_IdentityUser.cs" />
+    <Compile Remove="Data\Migrations\20210527182956_Extend_IdentityUser.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210527183231_Extend_IdentityUser.cs" />
+    <Compile Remove="Data\Migrations\20210527183231_Extend_IdentityUser.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="bootstrap" Version="5.0.1" />
+    <PackageReference Include="clr-format.js" Version="0.5.0" />
+    <PackageReference Include="JavaScriptEngineSwitcher.Extensions.MsDependencyInjection" Version="3.3.0" />
+    <PackageReference Include="JavaScriptEngineSwitcher.V8" Version="3.12.3" />
+    <PackageReference Include="jquery-globalize" Version="1.4.2" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="3.1.11" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.15" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.15" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.14" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.15" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.15" />
+    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="1.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.15" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.15" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.15" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.15">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="3.1.16" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+    <PackageReference Include="React.AspNet" Version="5.2.10" />
+    <PackageReference Include="React.Core" Version="5.2.11" />
+    <PackageReference Include="Serilog" Version="2.9.0" />
+    <PackageReference Include="System.Globalization" Version="4.3.0" />
+    <PackageReference Include="vue" Version="2.6.10" />
+    <PackageReference Include="VueCliMiddleware" Version="3.1.2" />
     <PackageReference Include="Westwind.AspNetCore.LiveReload" Version="0.3.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\AdminAreas\Data\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Areas\AdminAreas\Views\Shared\Error.cshtml" />
+    <None Include="Areas\AdminAreas\Views\Shared\_AdminLayout.cshtml" />
+    <None Include="Areas\AdminAreas\Views\Shared\_LoginPartial.cshtml" />
+    <None Include="Areas\AdminAreas\Views\Shared\_ValidationScriptsPartial.cshtml" />
   </ItemGroup>
 
 </Project>

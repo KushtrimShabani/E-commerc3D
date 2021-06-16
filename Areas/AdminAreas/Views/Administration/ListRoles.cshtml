@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityRole>
+@{ 
+    ViewBag.Title = "All Roles";
+}
+<p>
+    <a asp-action="CreateRole">Create</a>
+</p>
+<h1>All Roles</h1>
+
+@if (Model.Any())
+{
+    foreach (var role in Model)
+    {
+<div class="card mb-3">
+    <div class="card-header">
+        Role id : @role.Id
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">@role.Name </h5>
+
+    </div>
+    <form asp-action="DeleteRole" asp-route-id="@role.Id" method="post">
+        <a class="btn btn-primary" asp-action="EditRole" asp-controller="Administration" asp-route-id="@role.Id">Edit</a>
+        <button type="submit" class="btn btn-danger" 
+                onclick="return confirm(' Are you sure you want to delete the role : @role.Name ')">Delete  </button>
+    </form>
+</div>
+        }
+
+    }
+
+

@@ -1,0 +1,40 @@
+﻿@model List<E_commerc3D.Areas.AdminAreas.Models.UserRoleViewModel>
+@{
+    var roleId = ViewBag.roleId;
+}
+<form method="post">
+    <div class="table">
+        <h2>Add or remove users from this role</h2>
+        <div class="table-hover">
+           
+
+
+              
+            <thead>
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    <tr>
+
+                        <th>
+                            <input type="hidden" asp-for="@Model[i].UserId" class="form-check-input" />
+                            <input  type="hidden" asp-for="@Model[i].UserName" class="form-check-input" />
+                            <input asp-for="@Model[i].IsSelected" class="form-check-input" />
+                            <label class="form-check-label" asp-for="@Model[i].IsSelected">
+                                @Model[i].UserName
+                            </label>
+                        </th>
+                        <br>
+                        
+                    </tr>}
+                </thead>
+                
+
+            
+            
+             
+        </div>
+        <input type="submit" value="Update" class="btn btn-primary" />
+        <a asp-action="EditRole" asp-route-roleId="@roleId" class="btn btn-primary">Cancel</a>
+    </div>
+
+</form>

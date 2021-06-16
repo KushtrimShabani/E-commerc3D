@@ -1,5 +1,7 @@
-﻿using E_commerc3D.Models;
+﻿using E_commerc3D.Data;
+using E_commerc3D.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -11,14 +13,21 @@ namespace E_commerc3D.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly ApplicationDbContext _context;
+
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger ,ApplicationDbContext context)
         {
+            _context = context;
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
+        {
+            return View(await _context.Products.ToListAsync());
+        }
+        public IActionResult Conntact()
         {
             return View();
         }

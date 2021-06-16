@@ -1,0 +1,52 @@
+﻿@model E_commerc3D.Areas.AdminAreas.Models.EditRoleViewModel
+@{
+    ViewBag.Title = "Edite Role";
+}
+<h2>Edit Role</h2>
+<form method="post" class="table">
+    <div class="form-group">
+        <label asp-for="Id"></label>
+        <input asp-for="Id" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="RoleName"></label>
+        <input asp-for="RoleName" class="form-control">
+        
+    </div>
+    <div asp-validation-summary="All" class="text-info"></div>
+    <div class="form-group">
+        <div class="col-sm">
+            <button type="submit" class="btn btn-primary">Update</button>
+            <a asp-action="ListRoles"  class="btn btn-primary">Cancel</a>
+        </div>
+    </div>
+  
+    <div class="table">
+        <h2>User in this Role</h2>
+        <div class="table-hover">
+            @if (Model.Users.Any())
+            {
+
+            <thead>
+                @foreach (var user in Model.Users)
+                {
+
+                    <tr>
+                        <th>@user</th>
+
+                    </tr>
+                    <br>
+
+                }
+            </thead>
+
+                    }
+                    else
+                    {
+                    <h5>None at the moment</h5>}
+                </div>
+        <a asp-action="EditUserInRole" asp-controller="Administration"
+            asp-route-roleId="@Model.Id" class="btn btn-primary">Add or remove Users</a>
+    </div>
+
+</form>

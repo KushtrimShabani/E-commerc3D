@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using E_commerc3D.Data;
 using E_commerc3D.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace E_commerc3D.Controllers
 {
@@ -48,7 +49,7 @@ namespace E_commerc3D.Controllers
         // GET: Orders/Create
         public IActionResult Create()
         {
-            ViewData["productID"] = new SelectList(_context.Products, "Id", "Id");
+            ViewData["ProductID"] = new SelectList(_context.Products, "Id", "Id");
             return View();
         }
 
@@ -57,7 +58,7 @@ namespace E_commerc3D.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,UserID,ContactName,Quantity,Country,City,Mobile,Status,AddressShipping,AddressBilling,productID,CreateBy,CreateData,UpdateBy,UpdateData")] Order order)
+        public async Task<IActionResult> Create([Bind("Id,UserID,ContactName,Quantity,Country,City,Mobile,Status,AddressShipping,AddressBilling,ProductID,CreateBy,CreateData,UpdateBy,UpdateData")] Order order)
         {
             if (ModelState.IsValid)
             {
@@ -65,7 +66,7 @@ namespace E_commerc3D.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["productID"] = new SelectList(_context.Products, "Id", "Id", order.productID);
+            ViewData["ProductID"] = new SelectList(_context.Products, "Id", "Id", order.ProductID);
             return View(order);
         }
 
@@ -82,7 +83,7 @@ namespace E_commerc3D.Controllers
             {
                 return NotFound();
             }
-            ViewData["productID"] = new SelectList(_context.Products, "Id", "Id", order.productID);
+            ViewData["ProductID"] = new SelectList(_context.Products, "Id", "Id", order.ProductID);
             return View(order);
         }
 
@@ -91,7 +92,7 @@ namespace E_commerc3D.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,UserID,ContactName,Quantity,Country,City,Mobile,Status,AddressShipping,AddressBilling,productID,CreateBy,CreateData,UpdateBy,UpdateData")] Order order)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,UserID,ContactName,Quantity,Country,City,Mobile,Status,AddressShipping,AddressBilling,ProductID,CreateBy,CreateData,UpdateBy,UpdateData")] Order order)
         {
             if (id != order.Id)
             {
@@ -118,7 +119,7 @@ namespace E_commerc3D.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["productID"] = new SelectList(_context.Products, "Id", "Id", order.productID);
+            ViewData["ProductID"] = new SelectList(_context.Products, "Id", "Id", order.ProductID);
             return View(order);
         }
 
@@ -144,6 +145,7 @@ namespace E_commerc3D.Controllers
         // POST: Orders/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "DeleteOrderPolicy")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var order = await _context.Order.FindAsync(id);

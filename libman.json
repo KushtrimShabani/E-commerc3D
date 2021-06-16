@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+    "libraries": [
+      
+        {
+            "library": "vue@2.6.9",
+            "destination": "wwwroot/lib/vue/"
+        },
+        {
+            "library": "vue@2.6.9",
+            "destination": "wwwroot/lib/vue/"
+        }
+    ]
+}

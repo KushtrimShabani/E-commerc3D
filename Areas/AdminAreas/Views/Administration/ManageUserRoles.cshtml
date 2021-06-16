@@ -1,0 +1,36 @@
+﻿@model List<E_commerc3D.Areas.AdminAreas.Models.UserRolesViewModel>
+
+@{
+    var userId =ViewBag.userId;
+}
+<a href="C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\Areas\AdminAreas\Views\Administration\ManageUserRoles.cshtml">C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\Areas\AdminAreas\Views\Administration\ManageUserRoles.cshtml</a>
+
+<form method="post">
+    <div class="table">
+        <h1>ManageUserRoles</h1>
+        <div class="table-hover">
+            <thead>
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    <tr>
+
+                        <th>
+                            <input type="hidden" asp-for="@Model[i].RoleId" class="form-check-input" />
+                            <input type="hidden" asp-for="@Model[i].RoleName" class="form-check-input" />
+                            <input asp-for="@Model[i].IsSelected" class="form-check-input" />
+                            <label class="form-check-label" asp-for="@Model[i].IsSelected">
+                                @Model[i].RoleName
+                            </label>
+                        </th>
+                        <br>
+
+                    </tr>
+}
+            </thead>
+        </div>
+        <input type="submit" value="Update" class="btn btn-primary" />
+        <a asp-action="EditRole" asp-route-roleId="@userId" class="btn btn-primary">Cancel</a>
+    </div>
+
+</form>
+

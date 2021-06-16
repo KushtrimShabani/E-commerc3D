@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using E_commerc3D.Data;
 using E_commerc3D.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace E_commerc3D.Controllers
 {
@@ -54,7 +55,8 @@ namespace E_commerc3D.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Price_buy,Price_sell,Quantity,Measure,Active,Image,categoryID")] Product product)
+        [Authorize(Policy = "CreateProductsPolicy")]
+        public async Task<IActionResult> Create([Bind("Id,Name,Price_buy,Price_sell,Quantity,Measure,Active,Image,ImageBallina,CategoryID,CreateBy,CreateData,UpdateBy,UpdateData")] Product product)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +88,8 @@ namespace E_commerc3D.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Price_buy,Price_sell,Quantity,Measure,Active,Image,categoryID")] Product product)
+        [Authorize(Policy = "EditProductsPolicy")]
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Price_buy,Price_sell,Quantity,Measure,Active,Image,ImageBallina,CategoryID,CreateBy,CreateData,UpdateBy,UpdateData")] Product product)
         {
             if (id != product.Id)
             {
@@ -137,6 +140,7 @@ namespace E_commerc3D.Controllers
         // POST: Products/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "DeleteProductsPolicy")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var product = await _context.Products.FindAsync(id);

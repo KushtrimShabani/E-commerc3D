@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using E_commerc3D.Data;
 using E_commerc3D.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace E_commerc3D.Controllers
 {
@@ -26,21 +27,21 @@ namespace E_commerc3D.Controllers
         }
 
         // GET: Categories/Details/5
-        public async Task<IActionResult> Details(string id)
+        public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var category = await _context.Category
+            var categories = await _context.Category
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (category == null)
+            if (categories == null)
             {
                 return NotFound();
             }
 
-            return View(category);
+            return View(categories);
         }
 
         // GET: Categories/Create
@@ -54,31 +55,32 @@ namespace E_commerc3D.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,CreateBy,CreateData,UpdateBy,UpdateData")] Category category)
+
+        public async Task<IActionResult> Create([Bind("Id,Name,CreateBy,CreateData,UpdateBy,UpdateData")] Categories categories)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(category);
+                _context.Add(categories);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(category);
+            return View(categories);
         }
 
         // GET: Categories/Edit/5
-        public async Task<IActionResult> Edit(string id)
+        public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var category = await _context.Category.FindAsync(id);
-            if (category == null)
+            var categories = await _context.Category.FindAsync(id);
+            if (categories == null)
             {
                 return NotFound();
             }
-            return View(category);
+            return View(categories);
         }
 
         // POST: Categories/Edit/5
@@ -86,9 +88,10 @@ namespace E_commerc3D.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("Id,Name,CreateBy,CreateData,UpdateBy,UpdateData")] Category category)
+        [Authorize(Policy = "DeleteCategoriesPolicy")]
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,CreateBy,CreateData,UpdateBy,UpdateData")] Categories categories)
         {
-            if (id != category.Id)
+            if (id != categories.Id)
             {
                 return NotFound();
             }
@@ -97,12 +100,12 @@ namespace E_commerc3D.Controllers
             {
                 try
                 {
-                    _context.Update(category);
+                    _context.Update(categories);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!CategoryExists(category.Id))
+                    if (!CategoriesExists(categories.Id))
                     {
                         return NotFound();
                     }
@@ -113,39 +116,40 @@ namespace E_commerc3D.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(category);
+            return View(categories);
         }
 
         // GET: Categories/Delete/5
-        public async Task<IActionResult> Delete(string id)
+        public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var category = await _context.Category
+            var categories = await _context.Category
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (category == null)
+            if (categories == null)
             {
                 return NotFound();
             }
 
-            return View(category);
+            return View(categories);
         }
 
         // POST: Categories/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(string id)
+        [Authorize(Policy = "DeleteCategoriesPolicy")]
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var category = await _context.Category.FindAsync(id);
-            _context.Category.Remove(category);
+            var categories = await _context.Category.FindAsync(id);
+            _context.Category.Remove(categories);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool CategoryExists(string id)
+        private bool CategoriesExists(int id)
         {
             return _context.Category.Any(e => e.Id == id);
         }

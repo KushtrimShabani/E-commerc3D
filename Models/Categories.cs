@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace E_commerc3D.Models
 {
-    public class Category : BaseEntity
+    public class Categories : BaseEntity
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
     }
 }

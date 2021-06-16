@@ -1,0 +1,42 @@
+﻿@model IEnumerable<E_commerc3D.Areas.AdminAreas.Models.ApplicationUser>
+@{
+    ViewBag.Title = "All Users";
+}
+
+<h1>ListUsers</h1>
+
+<form action="" method="get">
+    <input type="text" name="searchString" />
+    <input type="submit" value="Search" />
+
+</form>
+
+
+@if (Model.Any())
+{
+    foreach (var user in Model)
+    {
+        <div class="card mb-3">
+            <div class="card-header">
+                User id : @user.Id
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">@user.UserName </h5>
+                <h5 class="card-title">@user.Email </h5>
+
+            </div>
+            <div class="card-footer">
+                <form method="post" asp-action="DeleteUser" asp-controller="Administration" asp-route-id="@user.Id">
+                    <a asp-action="EditUser" asp-controller="Administration"
+                       asp-route-Id="@user.Id" class="btn btn-primary">Edit </a>
+                   
+                    <button type="submit" class="btn btn-danger"
+                            onclick="return confirm('Are you sure you want to delete the user : @user.UserName')">
+                        Delete
+                    </button>
+                </form>
+            </div>
+        </div>
+    }
+
+}

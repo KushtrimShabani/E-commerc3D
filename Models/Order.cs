@@ -10,7 +10,7 @@ namespace E_commerc3D.Models
     {
         public int Id { get; set; }
         public string UserID { get; set; }
-      
+
         public string ContactName { get; set; }
         public int Quantity { get; set; }
         public string Country { get; set; }
@@ -21,10 +21,8 @@ namespace E_commerc3D.Models
         public string AddressBilling { get; set; }
 
         [ForeignKey("Product")]
+        public int ProductID { get; set; }
         // public static List<Product> productID = new List<Product>();
-        public int productID { get; set; }
         public virtual Product product { get; set; }
     }
-
 }
-

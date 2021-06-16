@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace E_commerc3D.Models
 {
-    public class Product
+    public class Product : BaseEntity
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -16,9 +16,10 @@ namespace E_commerc3D.Models
         public string Measure { get; set; }
         public bool Active { get; set; }
         public string Image { get; set; }
+        public string ImageBallina { get; set; }
 
         [ForeignKey("Category")]
-        public int categoryID { get; set; }
-        public virtual Category category { get; set; }
+        public int CategoryID { get; set; }
+        public virtual Categories Categories { get; set; }
     }
 }

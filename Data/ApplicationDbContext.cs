@@ -1,4 +1,5 @@
-﻿using E_commerc3D.Models;
+﻿using E_commerc3D.Areas.AdminAreas.Models;
+using E_commerc3D.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -12,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace E_commerc3D.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         private readonly IHttpContextAccessor httpContextAccessor;
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options, IHttpContextAccessor httpContextAccessor)
@@ -21,7 +22,7 @@ namespace E_commerc3D.Data
             this.httpContextAccessor = httpContextAccessor;
         }
         public DbSet<Product> Products { get; set; }
-        public DbSet<Category> Category { get; set; }
+        public DbSet<Categories> Category { get; set; }
         public DbSet<Order> Order { get; set; }
 
         public async Task<int> SaveChangesAsync()

@@ -1,8 +1,73 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model IEnumerable<E_commerc3D.Models.Product>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@{
+    ViewData["Title"] = "Home Page";
+
+    ViewData["Title"] = "Index";
+
+}
+<div >
+    <div class="lightbox">
+        <div class="px-3 m-3 nav navbar-nav navbar-right cart">
+            <button v-on:click="showCheckout" class="btn btn-secondary ml-auto  btn-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" class="c-icon c-icon-custom-size" height="42"><polygon fill="var(--ci-primary-color, currentColor)" points="160 96.039 160 128.039 464 128.039 464 191.384 428.5 304.039 149.932 304.039 109.932 16 16 16 16 48 82.068 48 122.068 336.039 451.968 336.039 496 196.306 496 96.039 160 96.039" class="ci-primary"></polygon><path fill="var(--ci-primary-color, currentColor)" d="M176.984,368.344a64.073,64.073,0,0,0-64,64h0a64,64,0,0,0,128,0h0A64.072,64.072,0,0,0,176.984,368.344Zm0,96a32,32,0,1,1,32-32A32.038,32.038,0,0,1,176.984,464.344Z" class="ci-primary"></path><path fill="var(--ci-primary-color, currentColor)" d="M400.984,368.344a64.073,64.073,0,0,0-64,64h0a64,64,0,0,0,128,0h0A64.072,64.072,0,0,0,400.984,368.344Zm0,96a32,32,0,1,1,32-32A32.038,32.038,0,0,1,400.984,464.344Z" class="ci-primary"></path></svg>
+                <span class="oi oi-icon-cart"></span> Check
+
+            </button>
+        </div>
+        <hr class="m-5" style="text-align:left;margin-left:0">
+        <div  class=" row justify-content-center">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-3 mr-5 ml-5">
+                    <div class="img-thumbnail" style=" background-color: white;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+       margin-bottom: 25px;">
+                        <div class="">
+                            <img :src="'uploads/'+@Html.DisplayFor(modelItem => item.ImageBallina)"
+                                 class="w-100 shadow-1-strong rounded"
+                                 style="max-width:650px; max-height:650px; overflow: visible ;" />
+
+                        </div>
+                        <div class="lightbox">
+                            <h2 class="feature-title m-3">@Html.DisplayFor(modelItem => item.Name)</h2>
+                            <h3 class="feature-title m-3">@Html.DisplayFor(modelItem => item.ImageBallina) </h3>
+                            <h3 id="app" class="feature-title m-3"> @Html.DisplayFor(modelItem => item.Price_buy) {{ formatPrice }}</h3>
+                            <button class=" btn btn-primary btn-lg"
+                                    v-if="canAddToCart(item)"
+                                    v-on:click="addToCart(item)">
+                                Add to cart
+                            </button>
+                            <button class="btn btn-disabled" disabled
+                                    v-else="canAddToCart(item)">
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            }
+        </div>
+    
+    </div>
+</div>  
+
+@section scripts {
+    <script  language="javascript" type="text/javascript">
+        var formatter = new Intl.NumberFormat('de-DE', {
+            style: 'currency',
+            currency: 'EUR',
+        });
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue!'
+            },
+            filters: {
+                formatPrice: function (price) {
+                    return formatter.format(price);
+                }
+            }
+        });
+    </script>
+}
