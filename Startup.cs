@@ -54,21 +54,22 @@ namespace E_commerc3D
               options.ClientSecret = "DU9wqTNTDrMMnSkScfhPpmjv";
               options.SaveTokens = true;
 
-              options.Events.OnCreatingTicket = ctx =>
-                {
-                    List<AuthenticationToken> tokens = ctx.Properties.GetTokens().ToList();
+              /*     options.Events.OnCreatingTicket = ctx =>
+                     {
+                         List<AuthenticationToken> tokens = ctx.Properties.GetTokens().ToList();
 
-                    tokens.Add(new AuthenticationToken()
-                    {
+                         tokens.Add(new AuthenticationToken()
+                         {
 
-                        Name = "TicketCreated",
-                        Value = DateTime.UtcNow.ToString()
-                    });
+                             Name = "TicketCreated",
+                             Value = DateTime.UtcNow.ToString()
+                         });
 
-                    ctx.Properties.StoreTokens(tokens);
+                         ctx.Properties.StoreTokens(tokens);
 
-                    return Task.CompletedTask;
-                };
+                         return Task.CompletedTask;
+                     };
+              */
           });
             services.AddAuthorization(options =>
             {
@@ -101,8 +102,8 @@ namespace E_commerc3D
             services.AddHttpContextAccessor();
             services.AddAuthorization(options =>
             {
-                options.AddPolicy("ElevatedRights", policy =>
-                  policy.RequireRole("Admin", "User"));
+                //options.AddPolicy("ElevatedRights", policy =>
+                //policy.RequireRole("Admin", "User"));
             });
         }
 

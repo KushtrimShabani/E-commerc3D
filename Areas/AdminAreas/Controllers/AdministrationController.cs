@@ -58,8 +58,8 @@ namespace E_commerc3D.Areas.AdminAreas.Controllers
                 return View("ListUsers");
             }
         }
-        [HttpPost]
 
+        [HttpPost]
         public async Task<IActionResult> DeleteRole(string id)
         {
             var role = await _roleManager.FindByIdAsync(id);

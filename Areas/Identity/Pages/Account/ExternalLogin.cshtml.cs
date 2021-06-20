@@ -139,11 +139,11 @@ namespace E_commerc3D.Areas.Identity.Pages.Account
                                 info.Principal.FindFirst(ClaimTypes.GivenName));
                         }
 
-                      /*  if (info.Principal.HasClaim(c => c.Type == "urn:google:locale"))
+                        if (info.Principal.HasClaim(c => c.Type == "urn:google:locale"))
                         {
                             await _userManager.AddClaimAsync(user,
                                 info.Principal.FindFirst("urn:google:locale"));
-                        }
+                        }/*
 
                         if (info.Principal.HasClaim(c => c.Type == "urn:google:picture"))
                         {

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ygweDaQtQV57e884WSnCaTCD/u2nmczrjes7xkm5/fLgAgRMTi/vHJ7/8rYBMNNozb8uP6VrLOd/g8iGUdpfQQ==",
+  "dgSpecHash": "NCro8Lt+0hWhvI1ow4FlyFY3phJsuCnXHYOGTK5ChXd8Oz7fykYrqlTJ5zvthCjzWdGFuEOcgMLUmss84gG7Cg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Admin\\source\\repos\\E-commerc3D\\E-commerc3D\\E-commerc3D.csproj",
   "expectedPackageFiles": [
@@ -216,7 +216,7 @@
     "C:\\Users\\Admin\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\vue\\2.6.10\\vue.2.6.10.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\vueclimiddleware\\3.1.2\\vueclimiddleware.3.1.2.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\westwind.aspnetcore.livereload\\0.3.2\\westwind.aspnetcore.livereload.0.3.2.nupkg.sha512"
+    "C:\\Users\\Admin\\.nuget\\packages\\westwind.aspnetcore.livereload\\0.3.0\\westwind.aspnetcore.livereload.0.3.0.nupkg.sha512"
   ],
   "logs": []
 }

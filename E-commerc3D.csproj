@@ -80,11 +80,13 @@
     <PackageReference Include="System.Globalization" Version="4.3.0" />
     <PackageReference Include="vue" Version="2.6.10" />
     <PackageReference Include="VueCliMiddleware" Version="3.1.2" />
-    <PackageReference Include="Westwind.AspNetCore.LiveReload" Version="0.3.2" />
+    <PackageReference Include="Westwind.AspNetCore.LiveReload" Version="0.3.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Areas\AdminAreas\Data\" />
+    <Folder Include="wwwroot\image\" />
+    <Folder Include="wwwroot\userthems\" />
   </ItemGroup>
 
   <ItemGroup>

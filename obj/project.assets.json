@@ -3500,7 +3500,7 @@
           "lib/netcoreapp3.1/VueCliMiddleware.dll": {}
         }
       },
-      "Westwind.AspNetCore.LiveReload/0.3.2": {
+      "Westwind.AspNetCore.LiveReload/0.3.0": {
         "type": "package",
         "compile": {
           "lib/netcoreapp3.1/Westwind.AspNetCore.LiveReload.dll": {}
@@ -10524,10 +10524,10 @@
         "vueclimiddleware.nuspec"
       ]
     },
-    "Westwind.AspNetCore.LiveReload/0.3.2": {
-      "sha512": "t+y7/WKEED7UiDZu5irRSCnGaZ2c6nEFr0U+5+oUFOsVra6gRRGCKiQoQ9/NCsRo1LAexukheFiOAAe2VCHdIQ==",
+    "Westwind.AspNetCore.LiveReload/0.3.0": {
+      "sha512": "VAy1fWMU6UfrjeROYgBr8gKc5owE2f8O8LVC9Mu/5KfC6Y3ugOyJEujk+lf1LUte3gvVa64BpjtcyjstcMqLDw==",
       "type": "package",
-      "path": "westwind.aspnetcore.livereload/0.3.2",
+      "path": "westwind.aspnetcore.livereload/0.3.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -10536,7 +10536,7 @@
         "lib/net5.0/Westwind.AspNetCore.LiveReload.xml",
         "lib/netcoreapp3.1/Westwind.AspNetCore.LiveReload.dll",
         "lib/netcoreapp3.1/Westwind.AspNetCore.LiveReload.xml",
-        "westwind.aspnetcore.livereload.0.3.2.nupkg.sha512",
+        "westwind.aspnetcore.livereload.0.3.0.nupkg.sha512",
         "westwind.aspnetcore.livereload.nuspec"
       ]
     }
@@ -10564,7 +10564,7 @@
       "Serilog >= 2.9.0",
       "System.Globalization >= 4.3.0",
       "VueCliMiddleware >= 3.1.2",
-      "Westwind.AspNetCore.LiveReload >= 0.3.2",
+      "Westwind.AspNetCore.LiveReload >= 0.3.0",
       "bootstrap >= 5.0.1",
       "clr-format.js >= 0.5.0",
       "jquery-globalize >= 1.4.2",
@@ -10698,7 +10698,7 @@
           },
           "Westwind.AspNetCore.LiveReload": {
             "target": "Package",
-            "version": "[0.3.2, )"
+            "version": "[0.3.0, )"
           },
           "bootstrap": {
             "target": "Package",

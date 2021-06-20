@@ -88,7 +88,7 @@ namespace E_commerc3D.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Policy = "DeleteCategoriesPolicy")]
+        [Authorize(Policy = "EditCategoriesPolicy")]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,CreateBy,CreateData,UpdateBy,UpdateData")] Categories categories)
         {
             if (id != categories.Id)

@@ -2,26 +2,26 @@
 @inject SignInManager<E_commerc3D.Areas.AdminAreas.Models.ApplicationUser> SignInManager
 @inject UserManager<E_commerc3D.Areas.AdminAreas.Models.ApplicationUser> UserManager
 
-<ul class="navbar-nav">
+
 @if (SignInManager.IsSignedIn(User))
 {
-    <li class="nav-item">
-        <a  class="nav-link text-light" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage"> @User.Identity.Name!</a>
+    <li class="">
+        <a  class="dropdown-item " asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage"> @User.Identity.Name!</a>
     </li>
-    <li class="nav-item">
+    <li class="">
         <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" >
 
-            <button  type="submit" class="nav-link btn btn-link text-light">Logout</button>
+            <button  type="submit" class="dropdown-item btn btn-link ">Logout</button>
         </form>
     </li>
 }
 else
 {
-    <li class="nav-item">
-        <a class="nav-link text-light" asp-area="Identity" asp-page="/Account/Register">Register</a>
+    <li class="">
+        <a class="dropdown-item " asp-area="Identity" asp-page="/Account/Register">Register</a>
     </li>
-    <li class="nav-item">
-        <a class="nav-link text-light" asp-area="Identity" asp-page="/Account/Login">Login</a>
+    <li class="">
+        <a class="dropdown-item " asp-area="Identity" asp-page="/Account/Login">Login</a>
     </li>
 }
-</ul>
+

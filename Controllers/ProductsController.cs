@@ -8,16 +8,20 @@ using Microsoft.EntityFrameworkCore;
 using E_commerc3D.Data;
 using E_commerc3D.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
+using System.IO;
 
 namespace E_commerc3D.Controllers
 {
     public class ProductsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly IHostingEnvironment hostingEnvironment;
 
-        public ProductsController(ApplicationDbContext context)
+        public ProductsController(ApplicationDbContext context, IHostingEnvironment hostingEnvironment)
         {
             _context = context;
+            this.hostingEnvironment = hostingEnvironment;
         }
 
         // GET: Products
@@ -55,12 +59,38 @@ namespace E_commerc3D.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Policy = "CreateProductsPolicy")]
-        public async Task<IActionResult> Create([Bind("Id,Name,Price_buy,Price_sell,Quantity,Measure,Active,Image,ImageBallina,CategoryID,CreateBy,CreateData,UpdateBy,UpdateData")] Product product)
+       // [Authorize(Policy = "CreateProductsPolicy")]
+        public async Task<IActionResult> Create([Bind("Id,Name,Price_buy,Price_sell,Quantity,Measure,Active,Image,Photo,CategoryID,CreateBy,CreateData,UpdateBy,UpdateData")] ProductCreateViewModel product)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(product);
+                string uniqueFileName = null;
+                if (product.Photo != null)
+                {
+                    string uploadsFolder = Path.Combine(hostingEnvironment.WebRootPath, "image");
+                    uniqueFileName = Guid.NewGuid().ToString() + "_" + product.Photo.FileName;
+                    string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                    product.Photo.CopyTo(new FileStream(filePath, FileMode.Create));
+                }
+                Product newProduct = new Product
+                {
+                    Id = product.Id,
+                    Name = product.Name,
+                    Price_buy = product.Price_buy,
+                    Price_sell = product.Price_sell,
+                    Quantity = product.Quantity,
+                    Measure = product.Measure,
+                    Active = product.Active,
+                    Image = product.Image,
+                    ImageBallina = uniqueFileName,
+                    CategoryID = product.CategoryID,
+                    CreateBy = product.CreateBy,
+                    CreateData = product.CreateData,
+                    UpdateBy = product.UpdateBy,
+                    UpdateData = product.UpdateData
+
+                };
+                _context.Add(newProduct);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
@@ -88,7 +118,7 @@ namespace E_commerc3D.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Policy = "EditProductsPolicy")]
+        //[Authorize(Policy = "EditProductsPolicy")]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Price_buy,Price_sell,Quantity,Measure,Active,Image,ImageBallina,CategoryID,CreateBy,CreateData,UpdateBy,UpdateData")] Product product)
         {
             if (id != product.Id)

@@ -1,9 +1,8 @@
-﻿@model E_commerc3D.Areas.AdminAreas.Models.UserRolesViewModel
+﻿@model Microsoft.AspNetCore.Identity.IdentityRole
 
 
 @{
     ViewData["Title"] = "Create";
-
 
 }
 <h1>Create</h1>
@@ -14,9 +13,9 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="RoleName" class="control-label"></label>
-                <input asp-for="RoleName" class="form-control" />
-                <span asp-validation-for="RoleName" class="text-danger"></span>
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
             </div>
 
             <div class="form-group">
