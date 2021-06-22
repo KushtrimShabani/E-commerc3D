@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "NCro8Lt+0hWhvI1ow4FlyFY3phJsuCnXHYOGTK5ChXd8Oz7fykYrqlTJ5zvthCjzWdGFuEOcgMLUmss84gG7Cg==",
+  "dgSpecHash": "uhKEfqUrnOjrlv5MybBt04i04K/ZZ/wwU0+99KYaFIQTDhx2Fafm3Qjk0oPa3oTW9xbl6XBa8p+CulyPDFJdzg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Admin\\source\\repos\\E-commerc3D\\E-commerc3D\\E-commerc3D.csproj",
   "expectedPackageFiles": [
@@ -97,7 +97,7 @@
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\nuget.frameworks\\4.7.0\\nuget.frameworks.4.7.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\react.aspnet\\5.2.10\\react.aspnet.5.2.10.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\react.aspnet.middleware\\5.2.10\\react.aspnet.middleware.5.2.10.nupkg.sha512",

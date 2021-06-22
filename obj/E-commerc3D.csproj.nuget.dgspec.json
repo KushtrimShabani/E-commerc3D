@@ -106,6 +106,10 @@
               "target": "Package",
               "version": "[3.1.5, )"
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
             "React.AspNet": {
               "target": "Package",
               "version": "[5.2.10, )"
