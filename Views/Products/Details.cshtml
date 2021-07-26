@@ -1,96 +1,546 @@
-﻿@model E_commerc3D.Models.Product
+﻿@model E_commerc3D.Models.Product 
 
+
+@using Newtonsoft.Json;
 @{
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<section class="breadcrumb breadcrumb_bg">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="breadcrumb_iner">
+                    <div class="breadcrumb_iner_item">
+                        <h2>Shop Single</h2>
+                        <p>Home <span>-</span> Shop Single</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- breadcrumb start-->
+<!--================End Home Banner Area =================-->
+<!--================Single Product Area =================-->
+<div class="product_image_area section_padding">
+    <div class="container">
+        <div class="row s_product_inner justify-content-between">
+            <div class="col-lg-7 col-xl-7">
+                <div class="product_slider_img">
+                    <div id="vertical">
+                        <div data-thumb="img/product/single-product/product_1.png">
+                            <img src="img/product/single-product/product_1.png" />
+                        </div>
+                        <div data-thumb="img/product/single-product/product_1.png">
+                            <img src="img/product/single-product/product_1.png" />
+                        </div>
+                        <div data-thumb="img/product/single-product/product_1.png">
+                            <img src="img/product/single-product/product_1.png" />
+                        </div>
+                        <div data-thumb="img/product/single-product/product_1.png">
+                            <img src="img/product/single-product/product_1.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="app" class="col-lg-5 col-xl-4">
+                <div class="s_product_text">
 
+                    <h3>  @Html.DisplayFor(model => model.Name)</h3>
+                    <h2> $ @Html.DisplayFor(model => model.Price_sell)</h2>
+                    <ul class="list">
+                        <li>
+                            <a class="active" href="#">
+
+                                <span>Category</span> : {{ categoriesname }}
+
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"> <span>Availibility</span> : In Stock</a>
+                        </li>
+                    </ul>
+                    <p>
+                        First replenish living. Creepeth image image. Creeping can't, won't called.
+                        Two fruitful let days signs sea together all land fly subdue
+                    </p>
+                    <div class="card_area d-flex justify-content-between align-items-center">
+                        <div class="product_count">
+                            <span class="inumber-decrement"> <i class="ti-minus"></i></span>
+                            <input class="input-number" type="text" value="1" min="0" max="10">
+                            <span class="number-increment"> <i class="ti-plus"></i></span>
+                        </div>
+                        <a href="#" class="btn_3">add to cart</a>
+                        <a href="#" class="like_us"> <i class="ti-heart"></i> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="product_description_area">
+    <div class="container">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+
+            <li class="nav-item">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+                   aria-selected="false">Specification</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
+                   aria-selected="false">Comments</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review"
+                   aria-selected="false">Reviews</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+
+
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <div class="table-responsive">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <h5>Quantity</h5>
+                                </td>
+                                <td>
+                                    <h5> @Html.DisplayFor(model => model.Quantity)</h5>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h5>InStock</h5>
+                                </td>
+                                <td>
+                                    <h5> @Html.DisplayFor(model => model.Active)</h5>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h5>Measure</h5>
+                                </td>
+                                <td>
+                                    <h5>@Html.DisplayFor(model => model.Measure)</h5>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <h5>Quality checking</h5>
+                                </td>
+                                <td>
+                                    <h5>yes</h5>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h5>Freshness Duration</h5>
+                                </td>
+                                <td>
+                                    <h5>03days</h5>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h5>When packeting</h5>
+                                </td>
+                                <td>
+                                    <h5>Without touch of hand</h5>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h5>Each Box contains</h5>
+                                </td>
+                                <td>
+                                    <h5>60pcs</h5>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="tab-pane fade show active" id="review" role="tabpanel" aria-labelledby="review-tab">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="row total_rate">
+                            <div class="col-6">
+                                <div class="box_total">
+                                    <h5>Overall</h5>
+                                    <h4>4.0</h4>
+                                    <h6>(03 Reviews)</h6>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="rating_list">
+                                    <h3>Based on 3 Reviews</h3>
+                                    <ul class="list">
+                                        <li>
+                                            <a href="#">
+                                                5 Star
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i> 01
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                4 Star
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i> 01
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                3 Star
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i> 01
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                2 Star
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i> 01
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                1 Star
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i> 01
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review_list">
+                            <div class="review_item">
+                                <div class="media">
+                                    <div class="d-flex">
+                                        <img src="img/product/single-product/review-1.png" alt="" />
+                                    </div>
+                                    <div class="media-body">
+                                        <h4>Blake Ruiz</h4>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                    ullamco laboris nisi ut aliquip ex ea commodo
+                                </p>
+                            </div>
+                            <div class="review_item">
+                                <div class="media">
+                                    <div class="d-flex">
+                                        <img src="img/product/single-product/review-2.png" alt="" />
+                                    </div>
+                                    <div class="media-body">
+                                        <h4>Blake Ruiz</h4>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                    ullamco laboris nisi ut aliquip ex ea commodo
+                                </p>
+                            </div>
+                            <div class="review_item">
+                                <div class="media">
+                                    <div class="d-flex">
+                                        <img src="img/product/single-product/review-3.png" alt="" />
+                                    </div>
+                                    <div class="media-body">
+                                        <h4>Blake Ruiz</h4>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                    ullamco laboris nisi ut aliquip ex ea commodo
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="review_box">
+                            <h4>Add a Review</h4>
+                            <p>Your Rating:</p>
+                            <ul class="list">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-star"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-star"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-star"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-star"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-star"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            <p>Outstanding</p>
+                            <form class="row contact_form" action="contact_process.php" method="post" novalidate="novalidate">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="name" placeholder="Your Full name" />
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" name="email" placeholder="Email Address" />
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="number" placeholder="Phone Number" />
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <textarea class="form-control" name="message" rows="1" placeholder="Review"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 text-right">
+                                    <button type="submit" value="submit" class="btn_3">
+                                        Submit Now
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================End Product Description Area =================-->
+<!-- product_list part start-->
+<section class="product_list best_seller">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="section_tittle text-center">
+                    <h2>Best Sellers <span>shop</span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center justify-content-between">
+            <div class="col-lg-12">
+                <div class="best_product_slider owl-carousel">
+                    <div class="single_product_item">
+                        <img src="img/product/product_1.png" alt="">
+                        <div class="single_product_text">
+                            <h4>Quartz Belt Watch</h4>
+                            <h3>$150.00</h3>
+                        </div>
+                    </div>
+                    <div class="single_product_item">
+                        <img src="img/product/product_2.png" alt="">
+                        <div class="single_product_text">
+                            <h4>Quartz Belt Watch</h4>
+                            <h3>$150.00</h3>
+                        </div>
+                    </div>
+                    <div class="single_product_item">
+                        <img src="img/product/product_3.png" alt="">
+                        <div class="single_product_text">
+                            <h4>Quartz Belt Watch</h4>
+                            <h3>$150.00</h3>
+                        </div>
+                    </div>
+                    <div class="single_product_item">
+                        <img src="img/product/product_4.png" alt="">
+                        <div class="single_product_text">
+                            <h4>Quartz Belt Watch</h4>
+                            <h3>$150.00</h3>
+                        </div>
+                    </div>
+                    <div class="single_product_item">
+                        <img src="img/product/product_5.png" alt="">
+                        <div class="single_product_text">
+                            <h4>Quartz Belt Watch</h4>
+                            <h3>$150.00</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <div>
     <h4>Product</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Name)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Name)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Price_buy)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Price_buy)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Price_sell)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Price_sell)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Quantity)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Quantity)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Measure)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Measure)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Active)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Active)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Image)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Image)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.ImageBallina)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.ImageBallina)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.CategoryID)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.CategoryID)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.CreateBy)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.CreateBy)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.CreateData)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.CreateData)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.UpdateBy)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.UpdateBy)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.UpdateData)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.UpdateData)
         </dd>
     </dl>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+<script src="~/lib/vue/vue.js"></script>
+
+<script language="javascript" type="text/javascript">
+
+        var app = new Vue({
+            el: '#app',
+
+            data: {
+                categories: '',
+                categoriesname: ''
+
+
+            },
+
+
+            mounted: function () {
+
+                this.categories = @Html.DisplayFor(model => model.CategoryID);
+
+                if (this.categories === 4) {
+
+                    this.categoriesname = 'Sofa'
+                }
+                else if (this.categories === 5) {
+                    this.categoriesname = 'Table'
+                }
+                else if (this.categories === 6) {
+                    this.categoriesname = 'Chair'
+                }
+                else {
+                    this.categoriesname = 'NoCategory'
+                }
+
+
+
+            },
+        });
+</script>

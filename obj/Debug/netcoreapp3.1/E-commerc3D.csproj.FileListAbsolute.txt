@@ -47,13 +47,6 @@ C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\Syst
 C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
 C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
-C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
-C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
-C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
-C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
-C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
-C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\obj\Debug\netcoreapp3.1\E-commerc3D.csprojAssemblyReference.cache
 C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\obj\Debug\netcoreapp3.1\E-commerc3D.AssemblyInfoInputs.cache
@@ -408,7 +401,6 @@ C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\refs
 C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\refs\System.Resources.Reader.dll
 C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\refs\System.Resources.ResourceManager.dll
 C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\refs\System.Resources.Writer.dll
-C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\refs\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\refs\System.Runtime.CompilerServices.VisualC.dll
 C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\refs\System.Runtime.dll
 C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\refs\System.Runtime.Extensions.dll
@@ -483,10 +475,6 @@ C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\obj\Debug\netcoreapp3.1\Razo
 C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\obj\Debug\netcoreapp3.1\Razor\Views\Products\Details.cshtml.g.cs
 C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\obj\Debug\netcoreapp3.1\Razor\Views\Products\Edit.cshtml.g.cs
 C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\obj\Debug\netcoreapp3.1\Razor\Views\Products\Index.cshtml.g.cs
-C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\obj\Debug\netcoreapp3.1\Razor\Views\Orders\Create.cshtml.g.cs
-C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\obj\Debug\netcoreapp3.1\Razor\Views\Orders\Delete.cshtml.g.cs
-C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\obj\Debug\netcoreapp3.1\Razor\Views\Orders\Details.cshtml.g.cs
-C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\obj\Debug\netcoreapp3.1\Razor\Views\Orders\Edit.cshtml.g.cs
 C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\obj\Debug\netcoreapp3.1\Razor\Views\Orders\Index.cshtml.g.cs
 C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\obj\Debug\netcoreapp3.1\Razor\Views\Categories\Create.cshtml.g.cs
 C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\obj\Debug\netcoreapp3.1\Razor\Views\Categories\Delete.cshtml.g.cs
@@ -540,3 +528,62 @@ C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\runt
 C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
 C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
 C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\obj\Debug\netcoreapp3.1\Razor\Views\Reviews\Create.cshtml.g.cs
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\obj\Debug\netcoreapp3.1\Razor\Views\Reviews\Delete.cshtml.g.cs
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\obj\Debug\netcoreapp3.1\Razor\Views\Reviews\Details.cshtml.g.cs
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\obj\Debug\netcoreapp3.1\Razor\Views\Reviews\Edit.cshtml.g.cs
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\obj\Debug\netcoreapp3.1\Razor\Views\Reviews\Index.cshtml.g.cs
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\obj\Debug\netcoreapp3.1\Razor\Views\Products\DetailsAndReviews.cshtml.g.cs
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\DnsClient.dll
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\MongoDB.Bson.dll
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\MongoDB.Driver.dll
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\MongoDB.Driver.Core.dll
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\MongoDB.Libmongocrypt.dll
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\SharpCompress.dll
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\runtimes\win\native\libzstd.dll
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\runtimes\win\native\snappy32.dll
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\runtimes\win\native\snappy64.dll
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\runtimes\linux\native\libmongocrypt.so
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\runtimes\osx\native\libmongocrypt.dylib
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\runtimes\win\native\mongocrypt.dll
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\obj\Debug\netcoreapp3.1\Razor\Views\Messages\Create.cshtml.g.cs
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\obj\Debug\netcoreapp3.1\Razor\Views\Messages\Delete.cshtml.g.cs
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\obj\Debug\netcoreapp3.1\Razor\Views\Messages\Details.cshtml.g.cs
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\obj\Debug\netcoreapp3.1\Razor\Views\Messages\Edit.cshtml.g.cs
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\obj\Debug\netcoreapp3.1\Razor\Views\Messages\Index.cshtml.g.cs
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\Views\Products\3d engine\docs\list.json
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\Views\Products\3d engine\editor\examples\arkanoid.app.json
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\Views\Products\3d engine\editor\examples\camera.app.json
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\Views\Products\3d engine\editor\examples\particles.app.json
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\Views\Products\3d engine\editor\examples\pong.app.json
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\Views\Products\3d engine\editor\examples\shaders.app.json
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\Views\Products\3d engine\editor\manifest.json
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\Views\Products\3d engine\examples\jsm\tween\bower.json
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\Views\Products\3d engine\examples\jsm\tween\build\config.json
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\Views\Products\3d engine\examples\jsm\tween\build\createjsTheme\theme.json
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\Views\Products\3d engine\examples\jsm\tween\build\package.json
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\Views\Products\3d engine\examples\jsm\tween\package.json
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\Views\Products\3d engine\examples\jsm\tween\tests\package.json
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\Views\Products\3d engine\examples\nodes\caustic.json
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\Views\Products\3d engine\examples\nodes\displace.json
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\Views\Products\3d engine\examples\nodes\wave.json
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\Views\Products\3d engine\examples\nodes\xray.json
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\Views\Products\3d engine\examples\tags.json
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\Views\Products\3d engine\examples\test.json
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\Views\Products\3d engine\package-lock.json
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\Views\Products\3d engine\package.json
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\Views\Products\3d engine\test\package-lock.json
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\Views\Products\3d engine\test\package.json
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\obj\Debug\netcoreapp3.1\Razor\Views\Products\IndexCategories.cshtml.g.cs
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\obj\Debug\netcoreapp3.1\Razor\Views\Cart\CartListViewModel.cshtml.g.cs
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\obj\Debug\netcoreapp3.1\Razor\Views\Cart\DetailsCart.cshtml.g.cs
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\obj\Debug\netcoreapp3.1\Razor\Views\Home\Cart.cshtml.g.cs
+C:\Users\Admin\source\repos\E-commerc3D\E-commerc3D\obj\Debug\netcoreapp3.1\Razor\Views\Cart\DetailsOrder.cshtml.g.cs

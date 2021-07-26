@@ -18,7 +18,8 @@ using Microsoft.AspNetCore.Http;
 using JavaScriptEngineSwitcher.V8;
 using JavaScriptEngineSwitcher.Extensions.MsDependencyInjection;
 using React.AspNet;
-
+using E_commerc3D.Models;
+using Microsoft.AspNetCore.StaticFiles;
 
 namespace E_commerc3D
 {
@@ -34,6 +35,7 @@ namespace E_commerc3D
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
@@ -41,11 +43,16 @@ namespace E_commerc3D
             services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.Configure<DeveloperDatabaseConfiguration>(Configuration.GetSection("DeveloperDatabaseConfiguration"));
+            services.AddScoped<MessengerService>();
+            services.AddControllers();
 
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddSignalR();
             services.AddMvc();
             services.AddAuthentication()
+
           .AddGoogle(options =>
           {
               IConfigurationSection googleAuthNSection =
@@ -126,13 +133,19 @@ namespace E_commerc3D
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
-            app.UseRouting();
+            StaticFileOptions options = new StaticFileOptions { ContentTypeProvider = new FileExtensionContentTypeProvider() };
+            options.ServeUnknownFileTypes = true;
+            app.UseStaticFiles(options);
 
+            app.UseRouting();
+           
             app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapHub<Chat>("/chat");
+
                 endpoints.MapControllerRoute(
                   name: "areas",
                   pattern: "{area:exists}/{controller=Home}/{action=Dashboard}/{id?}");

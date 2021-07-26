@@ -24,6 +24,7 @@ namespace E_commerc3D.Data
         public DbSet<Product> Products { get; set; }
         public DbSet<Categories> Category { get; set; }
         public DbSet<Order> Order { get; set; }
+        public DbSet<Review> Review { get; set; }
 
         public async Task<int> SaveChangesAsync()
         {
@@ -55,11 +56,15 @@ namespace E_commerc3D.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+            
 
             foreach (var foreigKey in builder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
             {
                 foreigKey.DeleteBehavior = DeleteBehavior.Restrict;
             }
         }
+
+      
     }
 }
+

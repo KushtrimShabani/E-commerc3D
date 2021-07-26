@@ -8,7 +8,7 @@ namespace E_commerc3D.Models
 {
     public class Order : BaseEntity
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string UserID { get; set; }
 
         public string ContactName { get; set; }
@@ -17,8 +17,15 @@ namespace E_commerc3D.Models
         public string City { get; set; }
         public string Mobile { get; set; }
         public string Status { get; set; }
+        public string Email { get; set; }
         public string AddressShipping { get; set; }
         public string AddressBilling { get; set; }
+        public string Address { get; set; }
+
+        public string OrderNotes { get; set; }
+        public Cart CartVM { get; set; }
+
+
 
         [ForeignKey("Product")]
         public int ProductID { get; set; }

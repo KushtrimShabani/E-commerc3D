@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>ARRERA</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link type="text/css" rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="imports/bootstrap.css">
+	<script src="imports/jquery.js"></script>
+	<script src="imports/popper.js"></script>
+	<script src="imports/bootstrap.js"></script>
+	<link rel="stylesheet" href="imports/fontawesome.css">
+	<script src = "https://www.arcadia-it.com/Arrera/arrera_algorithms/jquery.js"></script>
+	<style>
+		#nyan-btn:hover {
+			opacity: 1 !important;
+		}
+
+		a {
+			color: #08f;
+		}
+
+		.colorPicker {
+			display: inline-block;
+			margin: 0 10px
+		}
+
+		.btn_s {
+			color: #fff;
+			background: #0079c1;
+			font-weight: 700;
+			text-align: center;
+			text-decoration: none;
+			border: 0;
+			outline: 0;
+			font-size: 1.1rem;
+			padding: 12px 35px;
+			display: inline-block;
+			transform: skew(-21deg);
+			/* Un-skew the text */
+		}
+
+		.btn_s:visited {
+			color: #fff;
+		}
+
+		.btn_s:hover {
+			background: #0069a8;
+		}
+
+		.btn>span {
+			display: inline-block;
+			transform: skew(21deg);
+		}
+
+		body {
+			font-family: Helvetica, Arial, sans-serif;
+			margin: 0px !important;
+			padding: 0px !important;
+			background-color: #200000;
+		}
+
+		.h4:hover {
+			cursor: pointer;
+		}
+
+
+		html {
+			margin: 0px !important;
+			padding: 0px !important;
+		
+		}
+
+		#info:hover {
+			opacity: .8 !important;
+		}
+            .sidenav:hover{
+                opacity:.8;
+            }
+
+        .sidenav {
+          
+
+  width: 100%; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  bottom: 0; /* Stay at the top */
+  left: 0;
+
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+}
+
+
+.sidenav2 {
+    opacity: .7;
+  height: 230px; /* Full-height: remove this if you want "auto" height */
+  width: 100%; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  bottom: 180px; /* Stay at the top */
+  /* left: 160px; */
+  background-color: #111; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+}
+
+
+.sidenav3 {
+    opacity: .7;
+  height: 230px; /* Full-height: remove this if you want "auto" height */
+  width: 100%; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  bottom: 180px; /* Stay at the top */
+  /* left: 160px; */
+  background-color: #111; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+}
+
+.sidenav4 {
+    opacity: .7;
+  height: 230px; /* Full-height: remove this if you want "auto" height */
+  width: 100%; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  bottom: 180px; /* Stay at the top */
+  /* left: 160px; */
+  background-color: #111; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+}
+
+
+.sidenav5 {
+    opacity: .7;
+  height: 230px; /* Full-height: remove this if you want "auto" height */
+  width: 100%; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  bottom: 180px; /* Stay at the top */
+  /* left: 160px; */
+  background-color: #111; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+}
+
+.sidenav6 {
+    opacity: .7;
+  height: 230px; /* Full-height: remove this if you want "auto" height */
+  width: 100%; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  bottom: 180px; /* Stay at the top */
+  /* left: 160px; */
+  background-color: #111; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Style page content */
+.main {
+  margin-left: 160px; /* Same as the width of the sidebar */
+  padding: 0px 10px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+.nav-attr:hover{
+    background-color:#7E0000;
+}
+
+.btn-choose:hover{
+width:100px !important;
+height:100px !important;
+}
+	</style>
+</head>
+
+<body oncontextmenu="return false">
+
+
+	<div class="sidenav text-center p-0 m-0" >
+		<div class="row">
+			<div class="col-sm-9"></div>
+			<div class="col-sm-3">
+				<button class = "btn btn-light p-4 m-2" id = "lights_btn" >LIGHTS ON</button>
+			    <button class = "btn btn-light p-4 m-2" id = "spoiler_btn" >SPOILER</button>
+				<button id="nyan-btn" style = "border-radius: 100px;" class="bg-light mb-3 btn p-0 mt-4 pr-2 pl-2 m-0">
+					<h6 class="p-2 pt-3 pb-3" style = "color:black;">ENGINE
+						   <br>
+						   <span style="font-size:13px !important;font-weight: bold;color:black;">START/STOP</span>
+						   <br>
+						   <hr id="engine_start" style="background-color:red;height:4px;" >
+						   <audio style="display:none;" id="nyan" src="Sound/Sound.mp3" preload="metadata" type="audio/mpeg">
+							   Your browser does not support the audio element.
+						   </audio>
+					   </h6>
+				   </button>
+			</div>
+		
+		</div>
+		
+		<div class="row"  style = "border-top: 1px solid gainsboro;">
+		<div class="col-sm-5"></div>
+			<div class="col-sm-1">
+				<a onClick = "changeCategory(1,this)" class = "nav-attr first-attr" href="#" style = "color:black;"><img class = "mb-4 mt-4 " src="images/color_2.png" style="width:70px;">COLORS</a>
+			</div>
+			<!-- <div class="col-sm-1">
+				<a onClick = "changeCategory(2,this)"  class = "nav-attr first-attr" href="#" style = "color:black;"><img class = "mb-4 mt-4 " src="images/rims_2.png" style="width:70px;"> <br>RIMS</a>
+			</div> -->
+			<!-- <div class="col-sm-1">
+				<a onClick = "changeCategory(3,this)"  class = "nav-attr first-attr" href="#" style = "color:black;"><img class = "mb-4 mt-4 " src="images/brake_2.png" style="width:70px;">BRAKES</a>
+			</div> -->
+			<!-- <div class="col-sm-1 mr-0 pr-0">
+				<a onClick = "changeCategory(4,this)"  class = "nav-attr first-attr" href="#" style = "color:black;"><img class = "mb-4 mt-4 " src="images/seat.png" style="width:70px;">INTERIOR</a>
+			</div> -->
+		
+			<div class="col-sm-2 ml-0 pl-0">
+				<a onClick = "changeCategory(5,this)"  class = "nav-attr first-attr" href="#" style = "color:black;"><img class = "p-0 mb-4 mt-4 pt-4" src="images/car_lines_2.png" style="width:150px;"> <p class = "mt-3">LINES</p></a>
+			</div>
+			<div class="col-sm-2"></div>
+			<div class="col-sm-1">
+			
+			</div>
+		</div>
+      
+      
+      
+      </div>
+
+
+
+
+      <div class="sidenav2 text-center p-0 m-0" style = "display:none;background-color: #f5f5f5">
+        <button onClick = "back_sub_menu()"  class = "w-100 btn btn-primary text-center" style = "border-radius:0px;"><i class = "fa fa-arrow-circle-down"> </i> Close</button>
+        <h4 class = "p-4">Colors</h4>
+        <!--<button class = "btn-colors btn p-0 m-1 btn-choose" style = "width:75px;height:75px;background-color:#001792;color:#001792;border-radius:50px;"></button>-->
+        <!--<button class = "btn-colors btn p-0 m-1 btn-choose" style = "width:75px;height:75px;background-color:#0020CA;color:#0020CA;border-radius:50px;"></button>-->
+        <!--<button class = "btn-colors btn p-0 m-1 btn-choose" style = "width:75px;height:75px;background-color:#BC1100;color:#BC1100;border-radius:50px;"></button>-->
+        <!--<button class = "btn-colors btn p-0 m-1 btn-choose" style = "width:75px;height:75px;background-color:#F61600;color:#F61600;border-radius:50px;"></button>-->
+        <!--<button class = "btn-colors btn p-0 m-1 btn-choose" style = "width:75px;height:75px;background-color:#5000AF;color:#5000AF;border-radius:50px;"></button>-->
+        <!--<button class = "btn-colors btn p-0 m-1 btn-choose" style = "width:75px;height:75px;background-color:#5D04D0;color:#5D04D0;border-radius:50px;"></button>-->
+        <!--<button class = "btn-colors btn p-0 m-1 btn-choose" style = "width:75px;height:75px;background-color:#666666;color:#666666;border-radius:50px;"></button>-->
+        <!--<button class = "btn-colors btn p-0 m-1 btn-choose" style = "width:75px;height:75px;background-color:#555555;color:#555555;border-radius:50px;"></button>-->
+        <!--<button class = "btn-colors btn p-0 m-1 btn-choose" style = "width:75px;height:75px;background-color:#000000;color:#000000;border-radius:50px;"></button>-->
+        <input type = "color" class = 'btn-colors' id = 'btn-colors'>
+
+      </div>
+
+      <div class="sidenav3 text-center p-0 m-0" style = "display:none;background-color: #f5f5f5">
+        <button onClick = "back_sub_menu()"  class = "w-100 btn btn-primary text-center" style = "border-radius:0px;"><i class = "fa fa-arrow-circle-down"> </i> Close</button>
+        <h4 class = "p-4">Rims</h4>
+   
+        <button class = "btn-rims btn p-0 m-1 btn-choose" style = "width:75px;height:75px;background-color:#C0C0C0;color:#C0C0C0;border-radius:50px;"></button>
+        <button class = "btn-rims btn p-0 m-1 btn-choose" style = "width:75px;height:75px;background-color:#555555;color:#555555;border-radius:50px;"></button>
+        <button class = "btn-rims btn p-0 m-1 btn-choose" style = "width:75px;height:75px;background-color:#000000;color:#000000;border-radius:50px;"></button>
+
+      </div>
+
+
+      <div class="sidenav4 text-center p-0 m-0" style = "display:none;background-color: #f5f5f5">
+        <button onClick = "back_sub_menu()"  class = "w-100 btn btn-primary text-center" style = "border-radius:0px;"><i class = "fa fa-arrow-circle-down"> </i> Close</button>
+        <h4 class = "p-4">Interior</h4>
+   
+        <button class = "btn-interior btn p-0 m-1 btn-choose" style = "width:75px;height:75px;background-color:yellow;color:yellow;border-radius:50px;"></button>
+        <button class = "btn-interior btn p-0 m-1 btn-choose" style = "width:75px;height:75px;background-color:red;color:red;border-radius:50px;"></button>
+        <button class = "btn-interior btn p-0 m-1 btn-choose" style = "width:75px;height:75px;background-color:blue;color:blue;border-radius:50px;"></button>
+
+      </div>
+
+      <div class="sidenav5 text-center p-0 m-0" style = "display:none;background-color: #f5f5f5">
+        <button onClick = "back_sub_menu()"  class = "w-100 btn btn-primary text-center" style = "border-radius:0px;"><i class = "fa fa-arrow-circle-down"> </i> Close</button>
+        <h4 class = "p-4">Brakes</h4>
+   
+        <button class = "btn-brakes btn p-0 m-1 btn-choose" style = "width:75px;height:75px;background-color:black;color:black;border-radius:50px;"></button>
+        <button class = "btn-brakes btn p-0 m-1 btn-choose" style = "width:75px;height:75px;background-color:red;color:red;border-radius:50px;"></button>
+        <button class = "btn-brakes btn p-0 m-1 btn-choose" style = "width:75px;height:75px;background-color:blue;color:blue;border-radius:50px;"></button>
+
+      </div>
+
+      <div class="sidenav6 text-center p-0 m-0" style = "display:none;background-color: #f5f5f5">
+        <button onClick = "back_sub_menu()"  class = "w-100 btn btn-primary text-center" style = "border-radius:0px;"><i class = "fa fa-arrow-circle-down"> </i> Close</button>
+        <h4 class = "p-4">Lines</h4>
+		<!--<button class = "btn-lines btn p-0 m-1 btn-choose" style = "width:75px;height:75px;background-color:#fbff00;color:#fbff00;border-radius:50px;"></button>-->
+		<!--<button class = "btn-lines btn p-0 m-1 btn-choose" style = "width:75px;height:75px;background-color:#001792;color:#001792;border-radius:50px;"></button>-->
+  <!--      <button class = "btn-lines btn p-0 m-1 btn-choose" style = "width:75px;height:75px;background-color:#0020CA;color:#0020CA;border-radius:50px;"></button>-->
+  <!--      <button class = "btn-lines btn p-0 m-1 btn-choose" style = "width:75px;height:75px;background-color:#BC1100;color:#BC1100;border-radius:50px;"></button>-->
+  <!--      <button class = "btn-lines btn p-0 m-1 btn-choose" style = "width:75px;height:75px;background-color:#F61600;color:#F61600;border-radius:50px;"></button>-->
+  <!--      <button class = "btn-lines btn p-0 m-1 btn-choose" style = "width:75px;height:75px;background-color:#5000AF;color:#5000AF;border-radius:50px;"></button>-->
+  <!--      <button class = "btn-lines btn p-0 m-1 btn-choose" style = "width:75px;height:75px;background-color:#5D04D0;color:#5D04D0;border-radius:50px;"></button>-->
+  <!--      <button class = "btn-lines btn p-0 m-1 btn-choose" style = "width:75px;height:75px;background-color:#666666;color:#666666;border-radius:50px;"></button>-->
+  <!--      <button class = "btn-lines btn p-0 m-1 btn-choose" style = "width:75px;height:75px;background-color:#555555;color:#555555;border-radius:50px;"></button>-->
+		<!--<button class = "btn-lines btn p-0 m-1 btn-choose" style = "width:75px;height:75px;background-color:#000000;color:#000000;border-radius:50px;"></button>-->
+		        <input type = "color" class = 'btn-lines' id = 'btn-lines'>
+
+      </div>
+
+	<div id="container" class="p-0 m-0" style="background: rgb(0,0,0);
+                background: linear-gradient(180deg, rgba(0,0,0,0.9724264705882353) 0%, rgba(255,255,255,1) 35%, rgba(255,255,255,1) 63%);">
+			</div>
+		
+	
+<button id = "btn_sb" style = "display:none;">cm</button>
+
+	<script>
+	
+ 
+	
+	
+		var nyan = document.getElementById('nyan');
+		var nyanBtn = document.getElementById('nyan-btn');
+		nyanBtn.addEventListener('click', function () {
+			nyanBtn.classList.toggle('playing');
+			playPause(nyan);
+			//progress(nyanBtn, nyan);
+		});
+
+
+
+function back_sub_menu(){
+    $(".sidenav2").hide();
+$(".sidenav3").hide();
+$(".sidenav4").hide();
+$(".sidenav5").hide();
+$(".sidenav6").hide();
+}
+
+function changeCategory(e,th){
+if(e == 1){
+    $(".sidenav2").show();
+$(".sidenav3").hide();
+$(".sidenav4").hide();
+$(".sidenav5").hide();
+$(".sidenav6").hide();
+}else if(e == 2){
+    $(".sidenav2").hide();
+$(".sidenav3").show();
+$(".sidenav4").hide();
+$(".sidenav5").hide();
+$(".sidenav6").hide();
+}else if(e == 3){
+    $(".sidenav2").hide();
+$(".sidenav3").hide();
+$(".sidenav4").hide();
+$(".sidenav5").show();
+$(".sidenav6").hide();
+}else if(e == 4){
+$(".sidenav2").hide();
+$(".sidenav3").hide();
+$(".sidenav4").show();
+$(".sidenav5").hide();
+$(".sidenav6").hide();
+}else{
+    $(".sidenav2").hide();
+$(".sidenav3").hide();
+$(".sidenav4").hide(); 
+$(".sidenav5").hide();
+$(".sidenav6").show();
+}
+
+$(".nav-attr").attr("style","color:black;");
+$(th).attr("style","color:white;background-color:#7E0000;");
+}
+
+		function playPause(song) {
+			if (song.paused && song.currentTime >= 0 && !song.ended) {
+				song.play();
+				$("#engine_start").attr("style", "background-color:green;height:4px;");
+			} else {
+				song.pause();
+				song.currentTime = 0;
+				$("#engine_start").attr("style", "background-color:red;height:4px;");
+			}
+		}
+
+
+		function reset(btn, song) {
+			if (btn.classList.contains('playing')) {
+				btn.classList.toggle('playing');
+			}
+			song.pause();
+			song.currentTime = 0;
+		}
+
+
+
+		function openDetails(e) {
+			if ($(e).attr('name') == 'closed') {
+				$("#details_div").show();
+				$("#fa_icon").attr("class", "fa fa-chevron-down");
+				$(e).attr('name', 'open');
+			} else {
+				$("#details_div").hide();
+				$("#fa_icon").attr("class", "fa fa-chevron-up");
+				$(e).attr('name', 'closed');
+			}
+		}
+
+	</script>
+	<script type="module" src =  "js/jquery/jquerysd.js">
+
+
+	</script>
+	<script>
+	document.onkeydown = function(e) {
+  if(event.keyCode == 123) {
+     return false;
+  }
+  if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+     return false;
+  }
+  if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+     return false;
+  }
+  if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+     return false;
+  }
+  if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+     return false;
+  }
+}
+	</script>
+</body>
+
+</html>

@@ -1,15 +1,19 @@
 {
   "version": "1.0",
   "defaultProvider": "cdnjs",
-    "libraries": [
-      
-        {
-            "library": "vue@2.6.9",
-            "destination": "wwwroot/lib/vue/"
-        },
-        {
-            "library": "vue@2.6.9",
-            "destination": "wwwroot/lib/vue/"
-        }
-    ]
+  "libraries": [
+    {
+      "library": "vue@2.6.9",
+      "destination": "wwwroot/lib/vue/"
+    },
+    {
+      "provider": "unpkg",
+      "library": "@microsoft/signalr@5.0.7",
+      "destination": "wwwroot/lib/microsoft/signalr/",
+      "files": [
+        "dist/browser/signalr.min.js",
+        "dist/browser/signalr.js"
+      ]
+    }
+  ]
 }

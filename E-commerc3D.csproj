@@ -49,6 +49,8 @@
     <Compile Remove="Data\Migrations\20210527182956_Extend_IdentityUser.Designer.cs" />
     <Compile Remove="Data\Migrations\20210527183231_Extend_IdentityUser.cs" />
     <Compile Remove="Data\Migrations\20210527183231_Extend_IdentityUser.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210625011119_Testt.cs" />
+    <Compile Remove="Data\Migrations\20210625011119_Testt.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -56,13 +58,15 @@
     <PackageReference Include="clr-format.js" Version="0.5.0" />
     <PackageReference Include="JavaScriptEngineSwitcher.Extensions.MsDependencyInjection" Version="3.3.0" />
     <PackageReference Include="JavaScriptEngineSwitcher.V8" Version="3.12.3" />
+    <PackageReference Include="jQuery" Version="3.6.0" />
     <PackageReference Include="jquery-globalize" Version="1.4.2" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="3.1.11" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.10" />
     <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.15" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.14" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.15" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.10" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Core" Version="1.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.15" />
     <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="1.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.15" />
@@ -74,6 +78,7 @@
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Logging" Version="3.1.16" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+    <PackageReference Include="MongoDB.Driver" Version="2.12.4" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="React.AspNet" Version="5.2.10" />
     <PackageReference Include="React.Core" Version="5.2.11" />
@@ -87,7 +92,7 @@
   <ItemGroup>
     <Folder Include="Areas\AdminAreas\Data\" />
     <Folder Include="wwwroot\image\" />
-    <Folder Include="wwwroot\userthems\" />
+    <Folder Include="wwwroot\lib\microsoft\" />
   </ItemGroup>
 
   <ItemGroup>

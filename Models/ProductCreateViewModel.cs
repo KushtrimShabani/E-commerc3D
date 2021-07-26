@@ -19,7 +19,7 @@ namespace E_commerc3D.Models
         public string Image { get; set; }
         public IFormFile Photo{ get; set; }
 
-        [ForeignKey("Category")]
+        [ForeignKey("Categories")]
         public int CategoryID { get; set; }
         public virtual Categories Categories { get; set; }
     }

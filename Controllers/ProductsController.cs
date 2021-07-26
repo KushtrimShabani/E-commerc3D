@@ -10,6 +10,7 @@ using E_commerc3D.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
+using MongoDB.Driver;
 
 namespace E_commerc3D.Controllers
 {
@@ -17,6 +18,7 @@ namespace E_commerc3D.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly IHostingEnvironment hostingEnvironment;
+        private MongoClient client = new MongoClient("mongodb://localhost:27017/");
 
         public ProductsController(ApplicationDbContext context, IHostingEnvironment hostingEnvironment)
         {
@@ -27,8 +29,111 @@ namespace E_commerc3D.Controllers
         // GET: Products
         public async Task<IActionResult> Index()
         {
+            var applicationDbContext = _context.Products.Include(s => s.Categories);
             return View(await _context.Products.ToListAsync());
         }
+        public async Task<IActionResult> IndexCategories()
+        {
+            var applicationDbContext = _context.Products.Include(s => s.Categories);
+            List<Product> listofProduck = await _context.Products.ToListAsync();
+
+            List<Review> listofReviews = new List<Review>();
+            listofReviews = await _context.Review.ToListAsync();
+
+            List<Categories> listofCategory = new List<Categories>();
+            listofCategory = await _context.Category.ToListAsync();
+
+
+
+            ProductCategories productCategories = new ProductCategories();
+
+            productCategories.CategoriesIndexViewModel = listofCategory;
+            productCategories.ReviewIndexViewModel = listofReviews;
+            productCategories.ProductIndexViewModel = listofProduck;
+
+
+
+            return View(productCategories);
+        }
+
+        public async Task<IActionResult> DetailsAndReviews (int? id)
+        {
+            List<Review> listofReviews = new List<Review>();
+            listofReviews = await _context.Review.Where(m => m.ProductID == id).ToListAsync();
+
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var product = await _context.Products.Include(s => s.Categories)
+                .FirstOrDefaultAsync(m => m.Id == id);
+
+            ProductDetails productDetails = new ProductDetails();
+
+            productDetails.ProductsDetailsViewModel = product;
+            productDetails.ReviewIndexViewModel = listofReviews;
+           
+
+
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            return View(productDetails);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateReview([Bind("Id,Name,Email,Rating,Reviews,ProductID")] ProductDetails reviewdetails)
+        {
+
+           
+
+
+                Review review = new Review
+                {
+                    Id = reviewdetails.Id,
+                    Name = reviewdetails.Name,
+                    Email = reviewdetails.Email,
+                    Rating = reviewdetails.Rating,
+                    Reviews = reviewdetails.Reviews,
+                    ProductID = reviewdetails.ProductID,
+                };
+                _context.Add(review);
+                await _context.SaveChangesAsync();
+            return RedirectToAction("DetailsAndReviews", new { id = reviewdetails.ProductID });
+
+
+        }
+
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult CreateCartList([Bind("Id,Quantity,Pid")] ProductDetails cartListcs)
+        {
+            
+
+            CartListcs cartlist = new CartListcs
+            { 
+                Quantity = cartListcs.Quantity,
+                ProductID = cartListcs.Pid,
+            };
+            var database = client.GetDatabase("Messenger");
+            var table = database.GetCollection<CartListcs>("ListCart");
+            cartlist.Id = Guid.NewGuid().ToString();
+            table.InsertOne(cartlist);
+
+
+
+
+
+            return RedirectToAction("DetailsCart", "Cart", new { id = cartlist.Id });
+
+        }
+
+
 
         // GET: Products/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -38,7 +143,7 @@ namespace E_commerc3D.Controllers
                 return NotFound();
             }
 
-            var product = await _context.Products
+            var product = await _context.Products.Include(s => s.Categories)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (product == null)
             {
@@ -51,6 +156,7 @@ namespace E_commerc3D.Controllers
         // GET: Products/Create
         public IActionResult Create()
         {
+            ViewData["CategoryID"] = new SelectList(_context.Category, "Name", "Name");
             return View();
         }
 
@@ -62,6 +168,7 @@ namespace E_commerc3D.Controllers
        // [Authorize(Policy = "CreateProductsPolicy")]
         public async Task<IActionResult> Create([Bind("Id,Name,Price_buy,Price_sell,Quantity,Measure,Active,Image,Photo,CategoryID,CreateBy,CreateData,UpdateBy,UpdateData")] ProductCreateViewModel product)
         {
+           
             if (ModelState.IsValid)
             {
                 string uniqueFileName = null;
@@ -94,6 +201,7 @@ namespace E_commerc3D.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["CategoryID"] = new SelectList(_context.Category, "Id", "Id", product.CategoryID);
             return View(product);
         }
 
@@ -110,6 +218,7 @@ namespace E_commerc3D.Controllers
             {
                 return NotFound();
             }
+            ViewData["CategoryID"] = new SelectList(_context.Category, "Id", "Id", product.CategoryID);
             return View(product);
         }
 
@@ -146,6 +255,7 @@ namespace E_commerc3D.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["CategoryID"] = new SelectList(_context.Category, "Id", "Id", product.CategoryID);
             return View(product);
         }
 

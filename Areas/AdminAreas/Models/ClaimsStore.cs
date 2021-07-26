@@ -11,13 +11,13 @@ namespace E_commerc3D.Areas.AdminAreas.Models
         public static List<Claim> AllClaims = new List<Claim>()
     {
       
-        new Claim("Edit Product","Edit Product"),
-        new Claim("Delete Product","Delete Product"),
-        new Claim("Create Product", "Create Product"),
-        new Claim("Edit Seller","Edit Seller"),
-        new Claim("Delete Seller","Delete Seller"),
-        new Claim("Edit Stock","Edit Stock"),
-        new Claim("Delete Stock","Delete Stock")
+        new Claim("Edit Products","Edit Products"),
+        new Claim("Delete Products","Delete Products"),
+        new Claim("Create Products", "Create Products"),
+        new Claim("Edit Categories","Edit Categories"),
+        new Claim("Delete Categories","Delete Categories"),
+        new Claim("Edit Order","Edit Order"),
+        new Claim("Delete Order","Delete Order")
         
     };
     }

@@ -59,9 +59,9 @@
 
             <div class="form-group">
                 <label asp-for="CategoryID" class="control-label"></label>
-                <input asp-for="CategoryID" class="form-control" />
-                <span asp-validation-for="CategoryID" class="text-danger"></span>
+                <select asp-for="CategoryID" class="form-control" asp-items="ViewBag.CategoryID"></select>
             </div>
+
             <div class="form-group">
                 <label asp-for="CreateBy" class="control-label"></label>
                 <input disabled asp-for="CreateBy" class="form-control" />
